@@ -1,0 +1,7 @@
+*{box-sizing: border-box;}
+
+body{
+ background-image: url('smallerswimmingfish.gif');
+ background-attachment: fixed;
+ background-size: 100vw 100vh;
+}
