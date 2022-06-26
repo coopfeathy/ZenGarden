@@ -4,4 +4,64 @@ body{
  background-image: url('smallerswimmingfish.gif');
  background-attachment: fixed;
  background-size: 100vw 100vh;
+ z-index: 0;
+}
+
+.intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+header{
+    background-color: rgba(255, 255, 255, 0.60);
+    border: 2px solid rgb(78, 143, 255);
+    text-align: center;
+    padding: 20px;
+    z-index: 2;
+}
+
+.intro::after{
+    content: url('anchor.svg');
+    zoom: 15%;
+    z-index: 1;
+    height: 10px;
+    animation: anchor 5s linear infinite;
+}
+@keyframes anchor {
+    0% { transform: translate(0,0); }
+    50% { transform: translate(0,-20000%); }
+    100% { transform: translate(0%,0%); }
+}
+.summary, .preamble{
+    order: 1;
+}
+
+.summary{
+    background-color: white;
+    margin: 40px;
+    padding: 15px;
+    z-index: 2;
+    color: rgb(78, 143, 255);
+    border: 2px solid rgb(78, 143, 255);
+}
+
+
+@media screen and (min-width: 800px){
+    header{
+        align-self: flex-start;
+        margin: 40px;
+        margin-left: 150px;
+        width: 50vw;
+    }
+    .intro::after{
+        margin: 50px;
+        align-self: flex-end;
+    }
+    .summary, .preamble{
+        width: 70vw;
+    }
+    .summary{
+        width: 300px;
+        align-self: flex-start;
+    }
 }
